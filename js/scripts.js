@@ -11,7 +11,7 @@ User.prototype.isOne = function(diceRoll) {
   this.diceNumber = diceRoll;
   if(this.diceNumber === 1) {
     $("input#throw-total").val("0");
-    setTimeout(() => {switchUser()}, 300);
+    setTimeout(() => {switchUser()}, 400);
   } else {
     this.turnTotal += this.diceNumber;
     $("input#throw-total").val(this.turnTotal);
@@ -26,7 +26,8 @@ User.prototype.sumScore = function() {
     $("#close").click(() => {
       var user1 = new User(1, 0, 0, 1);
       var user2 = new User(1, 0, 0, 2);
-      var currentUser = user1;
+      $("input#score1").val('');
+      $("input#score2").val('');
       $(".modal").modal('hide');
     });
   }
@@ -70,15 +71,13 @@ function switchUser() {
 
 var user1 = new User(1, 0, 0, 1);
 var user2 = new User(1, 0, 0, 2);
-
 var currentUser = user1;
-
 
 $(document).ready(function() {
   $("button#hold").on("click", function(event){
     event.preventDefault();
     clickHold();
-    setTimeout(() => {switchUser()}, 500);
+    setTimeout(() => {switchUser()}, 400);
   });
 
   $("button#throw").on("click", function(event){

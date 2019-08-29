@@ -10,6 +10,7 @@ h1 {
   border-style:solid;
   padding: 10px;
   border: 1px solid darkgray;
+  border-radius: 5px;
   width: 85%;
   display: block;
   margin: 0 auto;
