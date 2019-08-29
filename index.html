@@ -12,29 +12,41 @@
   <body>
     <div class="container">
       <h1>Pig Dice</h1>
-      <form class="form-group" action="index.html" method="post" id="dice-section">
-        <label for="dice">Dice number</label>
-        <input id="dice" type="text">
-        <div class="buttons">
-          <button type="button" name="button" class="btn btn-info" id="throw">Throw</button>
-          <button type="button" name="button" class="btn btn-warning" id="hold">Hold!</button>
-        </div>
-        <label for="throw-total">Turn total:</label>
-        <input id="throw-total" type="text">
-      </form>
+      <div class="well">
+        <h3>Rules</h3>
+        <ul>
+          <li>If the player rolls 1, the player score nothing and it becomes the next player's turn.</li>
+          <li>If the player rolls any other number, it is added to their turn total and the player's turn continues.</li>
+          <li>If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.</li>
+          <li>The first player to score 100 or more points wins.</li>
+        </ul>
+      </div>
       <!-- reset button?: https://fontawesome.com/v4.7.0/icon/refresh -->
       <div class="row">
-        <div class="col-md-6 user1">
-
+        <div class="col-md-1"></div>
+        <div class="col-md-4 user1" id="user1">
           <h2>User 1</h2>
           <label for="score1">Score total:</label>
           <input type="text" id="score1">
         </div>
-        <div class="col-md-6 user2">
+        <div class="col-md-2">
+          <form class="form-group" action="index.html" method="post" id="dice-section">
+            <label for="dice">Dice number</label>
+            <input id="dice" type="text">
+            <div class="buttons">
+              <button type="button" name="button" class="btn btn-info" id="throw">Throw</button>
+              <button type="button" name="button" class="btn btn-warning" id="hold">Hold!</button>
+            </div>
+            <label for="throw-total">Turn total:</label>
+            <input id="throw-total" type="text">
+          </form>
+        </div>
+        <div class="col-md-4 user2">
           <h2>User 2</h2>
           <label for="score2">Score total:</label>
           <input type="text" id="score2">
         </div>
+        <div class="col-md-1"></div>
       </div>
       <div class="modal" role="dialog">
         <div class="modal-dialog" role="document">
@@ -43,7 +55,7 @@
               <h5 class="modal-title">Congratulations!</h5>
             </div>
             <div class="modal-body">
-              <p>You won the game!!!</p>
+              <p>You won the game👏🙌😽</p>
             </div>
             <div class="modal-footer">
               <button type="button" name="button" class="btn btn-info" id="close">Close</button>
