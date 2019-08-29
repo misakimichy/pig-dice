@@ -11,7 +11,7 @@ User.prototype.isOne = function(diceRoll) {
   this.diceNumber = diceRoll;
   if(this.diceNumber === 1) {
     $("input#throw-total").val("0");
-    switchUser();
+    setTimeout(() => {switchUser()}, 300);
   } else {
     this.turnTotal += this.diceNumber;
     $("input#throw-total").val(this.turnTotal);
@@ -24,11 +24,15 @@ User.prototype.sumScore = function() {
   if(this.scoreTotal >= 100) {
     $(".modal").modal();
     $("#close").click(() => {
+      var user1 = new User(1, 0, 0, 1);
+      var user2 = new User(1, 0, 0, 2);
+      var currentUser = user1;
       $(".modal").modal('hide');
     });
   }
 }
 
+// User Interface logic
 // Get random dice number
 function throwDice () {
   var diceRoll = Math.floor( Math.random() * 6 ) +1;
@@ -36,7 +40,7 @@ function throwDice () {
   currentUser.isOne(diceRoll);
 }
 
-// User Interface logic
+// Function to click hold button
 function clickHold() {
   $("input#dice").val("");
   $("input#throw-total").val("");
@@ -48,6 +52,7 @@ function clickHold() {
   }
 }
 
+// Function to switch user
 function switchUser() {
   $("input#dice").val("");
   $("input#throw-total").val("");
@@ -69,11 +74,11 @@ var user2 = new User(1, 0, 0, 2);
 var currentUser = user1;
 
 
-$(document).ready(function(){
-  $("button#hold").on("click", function (event){
+$(document).ready(function() {
+  $("button#hold").on("click", function(event){
     event.preventDefault();
     clickHold();
-    switchUser();
+    setTimeout(() => {switchUser()}, 500);
   });
 
   $("button#throw").on("click", function(event){
