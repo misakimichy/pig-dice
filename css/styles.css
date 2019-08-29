@@ -1,3 +1,7 @@
+body {
+  background-color: floralwhite;
+}
+
 h1 {
   text-align: center;
 }
@@ -9,6 +13,7 @@ h1 {
   width: 85%;
   display: block;
   margin: 0 auto;
+  background-color: whitesmoke;
 }
 
 #dice-section {
@@ -22,6 +27,11 @@ h1 {
   margin-top: 10px;
 }
 
+#close {
+  display: block;
+  margin: 0 auto;
+}
+
 .user1,
 .user2 {
   display: flex;
@@ -32,11 +42,12 @@ h1 {
   border: 1px solid darkgray;
   border-radius: 5px;
   padding: 20px;
+  background-color: bisque;
 }
 
 #user1,
 #user2 {
-  border: 3px solid red;
+  border: 3px solid indianred;
 }
 
 label {
