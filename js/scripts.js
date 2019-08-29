@@ -27,16 +27,7 @@ User.prototype.sumScore = function() {
       $(".modal").modal('hide');
     });
   }
-
 }
-
-// Check through dice and update turn total, continue the user throw 1 or click hold
-
-// if the user get 1, turn total will be cleared out and turn ends and
-// if the user click hold, turn total will be added to sore total then turn ends
-// every times turn ends turnNumber++
-
-// Todo: When a user sore total becomes more than 100, the user wins.
 
 // Get random dice number
 function throwDice () {
@@ -58,13 +49,18 @@ function clickHold() {
 }
 
 function switchUser() {
+  $("input#dice").val("");
+  $("input#throw-total").val("");
   if (currentUser == user1){
     currentUser = user2;
+    $(".user1").removeAttr("id");
+    $(".user2").attr("id", "user2");
   } else {
     currentUser = user1;
+    $(".user2").removeAttr("id");
+    $(".user1").attr("id", "user1");
   }
   currentUser.turnTotal = 0;
-  console.log("CurrentUser is ", currentUser.userNumber);
 }
 
 var user1 = new User(1, 0, 0, 1);
@@ -74,7 +70,6 @@ var currentUser = user1;
 
 
 $(document).ready(function(){
-  console.log("CurrentUser is ", currentUser.userNumber);
   $("button#hold").on("click", function (event){
     event.preventDefault();
     clickHold();
