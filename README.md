@@ -1,7 +1,7 @@
 # Pig Dice
 
 #### Intermediate JavaScript - _Pig Dice, 8/28/2019_
-** Pair program: Misaki Koonce, Bahay Gulle Bilgi and Zubeyde Sisman
+Pair program: Misaki Koonce, Bahay Gulle Bilgi and Zubeyde Sisman
 
 ## Description
 Build a application of Pig dice (using HTML, CSS, Bootstrap, JavaScript and jQuery)
